@@ -27,7 +27,7 @@ RUN git clone https://git.openstack.org/openstack-dev/devstack
 
 WORKDIR /github/devstack
 
-RUN bash -x tools/create-stack-user.sh && \
+RUN tools/create-stack-user.sh && \
 	chown -R stack:stack /github
 
 USER stack
