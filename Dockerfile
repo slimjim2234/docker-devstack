@@ -16,7 +16,8 @@ RUN apt-get update && \
 	python-dev \
 	sudo \
 	vim \
-	apt-utils
+	apt-utils \
+	lsb-release
 
 RUN mkdir /github
 
