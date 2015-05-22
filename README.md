@@ -1,7 +1,4 @@
 # docker-devstack
-Docker implementation for running a minimalistic openstack setup using devstack
-
-# docker-devstack
 Docker implementation for running a legit openstack setup using devstack.  Devstack was designed for those who would like to give openstack a try without going through the installation hassle of a full fledged stack.
 
 # running devstack tl;dr
