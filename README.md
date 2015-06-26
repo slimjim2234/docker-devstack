@@ -3,10 +3,12 @@ Docker implementation for running a legit openstack setup using devstack.  Devst
 
 # running devstack tl;dr
 
-docker run -it --privileged -p 80:80 slimjim2234/docker-devstack /bin/bash
+docker run -it --privileged -p 80:80 slimjim2234/docker-devstack
+docker commit <container id> devstack
+docker run -it --privileged -p 80:80 slimjim2234/devstack
 
 TODO: make supervisord script to run openstack on startup 
 
 # details on what's going on here
-Devstack is a quick one-click install for Openstack
-Devstack requires some kernel stuff.  In order for it to be allowed access to this kernel stuff we need initiate the --privileged flag.  Building an openstack image does now allow access to the kernel since that breaks the concept of the "container" if it's tied down to a machine specific kernel.  So build the container for your machine by running it, create your own image from the container, then you can run devstack without any issues.
+Devstack is a quick one-click install for Openstack.  Devstack requires some kernel stuff.  In order for it to be allowed access to this kernel stuff we need initiate the --privileged flag.  Building an openstack image does now allow access to the kernel since that breaks the concept of the "container".  So build the devstack container for your machine by running it, exit the container and create your own image from the container, then run your newly built devstack image.
+The installation can be very time consuming depending on your hardware (~20 mins).
