@@ -34,11 +34,6 @@ USER stack
 
 COPY localrc /github/devstack/
 
-#RUN sed -e '0,/n/{//i\nameserver 127.0.0.1' -e '}'
-
-#RUN /bin/bash -c ./stack.sh
-
 EXPOSE 22 80 443
 
-#CMD ["/github/devstack/rejoin-stack.sh"]
 CMD ["./stack.sh"]
