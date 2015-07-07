@@ -3,9 +3,9 @@ Docker implementation for running a legit openstack setup using devstack.  Devst
 
 # running devstack tl;dr
 
-docker run --privileged --name devstack -it -p 80:80 slimjim2234/docker-devstack \n
-docker commit <container id> devstack
-docker run -it --privileged -p 80:80 slimjim2234/devstack
+docker run --privileged --name devstack -it -p 80:80 slimjim2234/docker-devstack <br />
+docker commit <container id> devstack <br />
+docker run -it --privileged -p 80:80 slimjim2234/devstack <br />
 
 TODO: make supervisord script to run openstack on startup
 
