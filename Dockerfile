@@ -17,7 +17,10 @@ RUN apt-get update && \
 	sudo \
 	vim \
 	apt-utils \
-	lsb-release
+	lsb-release \
+	openvswitch-switch \
+	supervisor \
+	openssh-server
 
 RUN mkdir /github
 
@@ -33,6 +36,7 @@ RUN tools/create-stack-user.sh && \
 USER stack
 
 COPY localrc /github/devstack/
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 22 80 443
 

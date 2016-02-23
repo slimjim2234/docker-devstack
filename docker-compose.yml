@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  openstack:
+    build: .
+    ports:
+      - "8000:80"
+      - "4443:443"
+    privileged: true
+  rabbitmq:
+    image: rabbitmq:latest
+    environment:
+      - RABBITMQ_DEFAULT_PASS=st4ckb0ss
+      - RABBITMQ_DEFAULT_USER=stackrabbit
+  mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=st4ckb0ss
